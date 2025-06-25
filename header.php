@@ -2071,7 +2071,7 @@
                             <div class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
                                 <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
                                     <h1 style="font-size:36px;font-style:normal;font-weight:500;" class="has-link-color wp-elements-ccee218f3c7ae5c5ec85a0e0f89c8e9f wp-block-site-title has-text-color has-white-color has-system-fonts-font-family">
-                                        <a href="https://wp-themes.com/zeever" target="_self" rel="home" aria-current="page">Zeever</a>
+                                        <a href="<?php echo home_url(); ?>" target="_self" rel="home" aria-current="page"><img src="<?php echo get_template_directory_uri(); ?>/asset/image/Logo DFB E-commerce Strikes principal Bleu&Blanc.png" alt=""></a>
                                     </h1>
                                 </div>
 
