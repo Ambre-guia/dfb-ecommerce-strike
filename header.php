@@ -2065,7 +2065,6 @@
         <div class="wp-block-group has-black-background-color has-background is-layout-constrained wp-container-core-group-is-layout-4 wp-block-group-is-layout-constrained" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
             <div class="wp-block-cover" style="padding-bottom:180px;min-height:563px;aspect-ratio:unset;aspect-ratio:unset;">
                 <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
-                <img class="wp-block-cover__image-background wp-image-34" alt="" src="https://wp-themes.com/wp-content/themes/zeever/assets/img/background.webp" data-object-fit="cover" data-object-position="72% 99%">
                 <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
                     <header class="wp-block-template-part">
                         <div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-2 wp-block-group-is-layout-constrained" style="padding-top:20px">
