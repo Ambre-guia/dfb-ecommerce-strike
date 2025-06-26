@@ -1,0 +1,121 @@
+/* Styles pour les projets */
+.projets-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.projet-item {
+    background-color: #121212;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.projet-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projet-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.projet-content {
+    padding: 20px;
+}
+
+.projet-content h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.projet-content h2 a {
+    color: var(--zeever-primary-color);
+    text-decoration: none;
+}
+
+.projet-categories {
+    margin-bottom: 15px;
+}
+
+.projet-category {
+    display: inline-block;
+    background-color: var(--zeever-secondary-color);
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.projet-excerpt {
+    color: var(--zeever-bodytext-color);
+    margin-bottom: 20px;
+}
+
+.read-more {
+    display: inline-block;
+    background-color: var(--zeever-secondary-color);
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: var(--zeever-primary-color);
+    color: #fff;
+}
+
+.projet-featured-image {
+    margin-bottom: 40px;
+}
+
+.projet-navigation {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projet-navigation .nav-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projet-navigation .nav-previous,
+.projet-navigation .nav-next {
+    max-width: 48%;
+}
+
+.projet-navigation .nav-subtitle {
+    display: block;
+    color: var(--zeever-bodytext-color);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.projet-navigation .nav-title {
+    color: var(--zeever-primary-color);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .projets-grid {
+        grid-template-columns: 1fr;
+    }
+}
