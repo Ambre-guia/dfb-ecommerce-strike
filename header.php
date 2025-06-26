@@ -676,7 +676,8 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-            gap: 1.25em
+            gap: 1.25em;
+            justify-content: center;
         }
 
         .wp-block-post-template.is-flex-container>li {
