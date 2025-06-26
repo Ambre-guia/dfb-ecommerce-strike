@@ -180,3 +180,97 @@ function dfb_add_meta_tags() {
     }
 }
 add_action('wp_head', 'dfb_add_meta_tags');
+
+/**
+ * Options de personnalisation pour le thème
+ */
+function dfb_customize_register($wp_customize) {
+    // Section Footer
+    $wp_customize->add_section('dfb_footer_section', array(
+        'title'    => __('Options du footer', 'dfb-ecommerce-strike'),
+        'priority' => 130,
+    ));
+    
+    // Description du footer
+    $wp_customize->add_setting('footer_description', array(
+        'default'           => 'Lorem ipsum dolor sit amet, consecte adipiscing elit, sed do eiusmod tempor incididunt ut labore',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('footer_description', array(
+        'label'    => __('Description du footer', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'textarea',
+    ));
+    
+    // Adresse
+    $wp_customize->add_setting('footer_address', array(
+        'default'           => 'Adresse de votre entreprise',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('footer_address', array(
+        'label'    => __('Adresse', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'text',
+    ));
+    
+    // Téléphone
+    $wp_customize->add_setting('footer_phone', array(
+        'default'           => '01 23 45 67 89',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('footer_phone', array(
+        'label'    => __('Téléphone', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'text',
+    ));
+    
+    // Email
+    $wp_customize->add_setting('footer_email', array(
+        'default'           => 'contact@votredomaine.com',
+        'sanitize_callback' => 'sanitize_email',
+    ));
+    
+    $wp_customize->add_control('footer_email', array(
+        'label'    => __('Email', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'email',
+    ));
+    
+    // Réseaux sociaux
+    $wp_customize->add_setting('social_facebook', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control('social_facebook', array(
+        'label'    => __('URL Facebook', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'url',
+    ));
+    
+    $wp_customize->add_setting('social_twitter', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control('social_twitter', array(
+        'label'    => __('URL Twitter', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'url',
+    ));
+    
+    $wp_customize->add_setting('social_instagram', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ));
+    
+    $wp_customize->add_control('social_instagram', array(
+        'label'    => __('URL Instagram', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_footer_section',
+        'type'     => 'url',
+    ));
+}
+add_action('customize_register', 'dfb_customize_register');
