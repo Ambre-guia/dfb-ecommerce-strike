@@ -1,15 +1,10 @@
-<html lang="en-US">
+<html <?php language_attributes(); ?>>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <style>
-        img:is([sizes="auto" i], [sizes^="auto," i]) {
-            contain-intrinsic-size: 3000px 1500px
-        }
-    </style>
-    <title>DFB corporate</title>
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <?php wp_head(); ?>
     <link rel="alternate" type="application/rss+xml" title="Zeever » Feed" href="https://wp-themes.com/zeever/?feed=rss2">
     <link rel="alternate" type="application/rss+xml" title="Zeever » Comments Feed" href="https://wp-themes.com/zeever/?feed=comments-rss2">
     <script>
@@ -2059,61 +2054,64 @@
     </style>
 </head>
 
-<body class="home blog wp-embed-responsive wp-theme-zeever">
-    <a class="skip-link screen-reader-text" id="wp-skip-link" href="#wp--skip-link--target">Skip to content</a>
-    <div class="wp-site-blocks">
-        <div class="wp-block-group has-black-background-color has-background is-layout-constrained wp-container-core-group-is-layout-4 wp-block-group-is-layout-constrained" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px">
-            <div class="wp-block-cover" style="padding-bottom:180px;min-height:563px;aspect-ratio:unset;aspect-ratio:unset;">
-                <span aria-hidden="true" class="wp-block-cover__background has-background-dim-0 has-background-dim"></span>
-                <div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow">
-                    <header class="wp-block-template-part">
-                        <div class="wp-block-group is-layout-constrained wp-container-core-group-is-layout-2 wp-block-group-is-layout-constrained" style="padding-top:20px">
-                            <div class="wp-block-columns are-vertically-aligned-center is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
-                                <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%">
-                                    <h1 style="font-size:36px;font-style:normal;font-weight:500;" class="has-link-color wp-elements-ccee218f3c7ae5c5ec85a0e0f89c8e9f wp-block-site-title has-text-color has-white-color has-system-fonts-font-family">
-                                        <a href="<?php echo home_url(); ?>" target="_self" rel="home" aria-current="page"><img src="<?php echo get_template_directory_uri(); ?>/asset/image/icone_ DFB E-commerce strikes W&Blue.png" alt=""></a>
-                                    </h1>
-                                </div>
-
-
-
-                                <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow"></div>
-
-
-
-                                <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%">
-                                    <div class="wp-block-group is-content-justification-right is-nowrap is-layout-flex wp-container-core-group-is-layout-1 wp-block-group-is-layout-flex">
-                                        <nav style="font-size:14px;font-style:normal;font-weight:500;text-transform:uppercase;" class="has-text-color has-white-color is-responsive is-style-customnav wp-block-navigation is-horizontal is-layout-flex wp-block-navigation-is-layout-flex" data-wp-interactive="core/navigation" data-wp-context="{&quot;overlayOpenedBy&quot;:{&quot;click&quot;:false,&quot;hover&quot;:false,&quot;focus&quot;:false},&quot;type&quot;:&quot;overlay&quot;,&quot;roleAttribute&quot;:&quot;&quot;,&quot;ariaLabel&quot;:&quot;Menu&quot;}"><button aria-haspopup="dialog" aria-label="Open menu" class="wp-block-navigation__responsive-container-open " data-wp-on-async--click="actions.openMenuOnClick" data-wp-on--keydown="actions.handleMenuKeydown"><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                                    <rect x="4" y="7.5" width="16" height="1.5"></rect>
-                                                    <rect x="4" y="15" width="16" height="1.5"></rect>
-                                                </svg></button>
-                                            <div class="wp-block-navigation__responsive-container" id="modal-1" data-wp-class--has-modal-open="state.isMenuOpen" data-wp-class--is-menu-open="state.isMenuOpen" data-wp-watch="callbacks.initMenu" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on-async--focusout="actions.handleMenuFocusout" tabindex="-1">
-                                                <div class="wp-block-navigation__responsive-close" tabindex="-1">
-                                                    <div class="wp-block-navigation__responsive-dialog" data-wp-bind--aria-modal="state.ariaModal" data-wp-bind--aria-label="state.ariaLabel" data-wp-bind--role="state.roleAttribute">
-                                                        <button aria-label="Close menu" class="wp-block-navigation__responsive-container-close" data-wp-on-async--click="actions.closeMenuOnClick"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                                                                <path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path>
-                                                            </svg></button>
-                                                        <div class="wp-block-navigation__responsive-container-content" data-wp-watch="callbacks.focusFirstElement" id="modal-1-content">
-                                                            <ul style="font-size:14px;font-style:normal;font-weight:500;text-transform:uppercase;" class="wp-block-navigation__container has-text-color has-white-color is-responsive is-style-customnav wp-block-navigation">
-                                                                <li style="font-size: 14px;" class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Home</span></a></li>
-                                                                <li style="font-size: 14px;" class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">About Us</span></a></li>
-                                                                <li style="font-size: 14px;" class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Services</span></a></li>
-                                                                <li data-wp-context="{ &quot;submenuOpenedBy&quot;: { &quot;click&quot;: false, &quot;hover&quot;: false, &quot;focus&quot;: false }, &quot;type&quot;: &quot;submenu&quot;, &quot;modal&quot;: null }" data-wp-interactive="core/navigation" data-wp-on--focusout="actions.handleMenuFocusout" data-wp-on--keydown="actions.handleMenuKeydown" data-wp-on-async--mouseenter="actions.openMenuOnHover" data-wp-on-async--mouseleave="actions.closeMenuOnHover" data-wp-watch="callbacks.initMenu" tabindex="-1" style="font-size: 14px;" class=" wp-block-navigation-item has-child open-on-hover-click wp-block-navigation-submenu"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Works</span></a><button data-wp-bind--aria-expanded="state.isMenuOpen" data-wp-on-async--click="actions.toggleMenuOnClick" aria-label="Works submenu" class="wp-block-navigation__submenu-icon wp-block-navigation-submenu__toggle" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" focusable="false">
-                                                                            <path d="M1.50002 4L6.00002 8L10.5 4" stroke-width="1.5"></path>
-                                                                        </svg></button>
-                                                                    <ul data-wp-on-async--focus="actions.openMenuOnFocus" class="wp-block-navigation__submenu-container wp-block-navigation-submenu">
-                                                                        <li style="font-size: 14px;" class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Project</span></a></li>
-                                                                    </ul>
-                                                                </li>
-                                                                <li style="font-size: 14px;" class=" wp-block-navigation-item wp-block-navigation-link"><a class="wp-block-navigation-item__content" href="#"><span class="wp-block-navigation-item__label">Contact</span></a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </nav>
-                                    </div>
-                                </div>
+<body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
+    
+    <div id="page" class="site">
+        <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Passer au contenu', 'dfb-ecommerce-strike'); ?></a>
+        <div class="wp-site-blocks">
+        <header id="masthead" class="site-header">
+            <div class="wp-block-group has-black-background-color has-background is-layout-constrained">
+                <div class="site-header-inner">
+                    <div class="site-branding">
+                        <?php if (has_custom_logo()) : ?>
+                            <div class="site-logo">
+                                <?php the_custom_logo(); ?>
                             </div>
-                        </div>
-                    </header>
+                        <?php else : ?>
+                            <h1 class="site-title">
+                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                                    <?php bloginfo('name'); ?>
+                                </a>
+                            </h1>
+                            <?php $description = get_bloginfo('description', 'display'); ?>
+                            <?php if ($description || is_customize_preview()) : ?>
+                                <p class="site-description"><?php echo $description; ?></p>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div><!-- .site-branding -->
+
+                    <nav id="site-navigation" class="main-navigation">
+                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                            <span class="menu-toggle-icon"></span>
+                            <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
+                        </button>
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'primary-menu',
+                                'menu_id'        => 'primary-menu',
+                                'container_class' => 'primary-menu-container',
+                                'fallback_cb'     => false,
+                            )
+                        );
+                        ?>
+                    </nav><!-- #site-navigation -->
+
+                    <?php if (class_exists('WooCommerce')) : ?>
+                    <div class="site-header-cart">
+                        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('Voir votre panier', 'dfb-ecommerce-strike'); ?>">
+                            <span class="cart-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1"></circle>
+                                    <circle cx="20" cy="21" r="1"></circle>
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                </svg>
+                            </span>
+                            <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                        </a>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </header><!-- #masthead -->
