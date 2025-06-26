@@ -7,14 +7,13 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-top:80px;padding-bottom:80px">
-        <div class="wp-block-columns is-layout-flex">
-            <div class="wp-block-column" style="flex-basis:700px;">
-                <h1 class="has-zeever-primary-color has-heading-1-font-size" style="font-weight:700;line-height:1.2;">Nos Projets</h1>
-                <p class="has-zeever-bodytext-color has-text-color">Découvrez nos réalisations précédentes</p>
-            </div>
-        </div>
-    </div>
+    <?php
+    // En-tête de l'archive
+    get_template_part('inc/template-part/hero-header', null, array(
+        'title' => 'Nos Projets',
+        'subtitle' => 'Découvrez nos réalisations précédentes'
+    ));
+    ?>
 
     <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-bottom:100px;">
         <?php if (have_posts()) : ?>
@@ -26,7 +25,9 @@ get_header();
                     <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
                         <div class="projet-thumbnail">
                             <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('large'); ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </a>
                             <?php endif; ?>
                         </div>
                         <div class="projet-content">
