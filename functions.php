@@ -274,3 +274,107 @@ function dfb_customize_register($wp_customize) {
     ));
 }
 add_action('customize_register', 'dfb_customize_register');
+
+/**
+ * Ajouter des options de personnalisation au Customizer
+ */
+function dfb_ecommerce_strike_customize_register($wp_customize) {
+    // Section pour les options de la page d'accueil
+    $wp_customize->add_section('dfb_homepage_options', array(
+        'title'    => __('Options de la page d\'accueil', 'dfb-ecommerce-strike'),
+        'priority' => 30,
+    ));
+    
+    // Services Section
+    $wp_customize->add_setting('services_title', array(
+        'default'           => 'Services',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('services_title', array(
+        'label'    => __('Titre de la section Services', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    $wp_customize->add_setting('services_subtitle', array(
+        'default'           => 'OUR SERVICES FOR CLIENTS',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('services_subtitle', array(
+        'label'    => __('Sous-titre de la section Services', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    // Projects Section
+    $wp_customize->add_setting('projects_title', array(
+        'default'           => 'Works',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('projects_title', array(
+        'label'    => __('Titre de la section Projets', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    $wp_customize->add_setting('projects_subtitle', array(
+        'default'           => 'Projects We Have Done',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('projects_subtitle', array(
+        'label'    => __('Sous-titre de la section Projets', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    // Testimonials Section
+    $wp_customize->add_setting('testimonials_title', array(
+        'default'           => 'Testimonials.',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('testimonials_title', array(
+        'label'    => __('Titre de la section Témoignages', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    $wp_customize->add_setting('testimonials_subtitle', array(
+        'default'           => 'FEEDBACK FROM OUR CLIENTS',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('testimonials_subtitle', array(
+        'label'    => __('Sous-titre de la section Témoignages', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    // News Section
+    $wp_customize->add_setting('news_title', array(
+        'default'           => 'Latest News',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('news_title', array(
+        'label'    => __('Titre de la section Actualités', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+    
+    $wp_customize->add_setting('news_subtitle', array(
+        'default'           => 'CHECK OUT SOME OF OUR NEWS',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    $wp_customize->add_control('news_subtitle', array(
+        'label'    => __('Sous-titre de la section Actualités', 'dfb-ecommerce-strike'),
+        'section'  => 'dfb_homepage_options',
+        'type'     => 'text',
+    ));
+}
+add_action('customize_register', 'dfb_ecommerce_strike_customize_register');
