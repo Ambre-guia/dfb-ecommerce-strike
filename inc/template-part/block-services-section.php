@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part pour la section de services
  *
@@ -17,17 +18,17 @@ if (!isset($args['services']) || empty($args['services'])) {
         array(
             'title' => 'Marketing Strategy',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat bibendum turpis sit amet pretium.',
-            'image' => get_template_directory_uri() . '/assets/img/marketing.jpg'
+            'image' => 'https://wp-themes.com/wp-content/themes/zeever/assets/img/strategy.webp'
         ),
         array(
             'title' => 'Web Development',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat bibendum turpis sit amet pretium.',
-            'image' => get_template_directory_uri() . '/assets/img/webdev.jpg'
+            'image' => 'https://wp-themes.com/wp-content/themes/zeever/assets/img/ui-design.webp'
         ),
         array(
             'title' => 'Social Media',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat bibendum turpis sit amet pretium.',
-            'image' => get_template_directory_uri() . '/assets/img/socialmedia.jpg'
+            'image' => 'https://wp-themes.com/wp-content/themes/zeever/assets/img/content.webp'
         )
     );
 } else {
@@ -54,26 +55,26 @@ if (!isset($args['services']) || empty($args['services'])) {
 
             <!-- SERVICES -->
             <div class="wp-block-columns is-layout-flex">
-                <?php 
+                <?php
                 $delay = 1;
-                foreach ($services as $service) : 
+                foreach ($services as $service) :
                 ?>
-                <div class="wp-block-column zeever-animate zeever-move-up zeever-delay-<?php echo $delay; ?> is-layout-flow">
-                    <div class="wp-block-group has-black-background-color has-background" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
-                        <figure class="wp-block-image size-full is-resized">
-                            <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>">
-                        </figure>
-                        <h3 class="has-text-align-left has-white-color has-text-color has-heading-4-font-size wp-block-heading" style="margin-top:20px;margin-bottom:20px">
-                            <?php echo esc_html($service['title']); ?>
-                        </h3>
-                        <p class="has-text-align-left has-zeever-bodytext-color has-text-color has-tiny-font-size">
-                            <?php echo esc_html($service['description']); ?>
-                        </p>
+                    <div class="wp-block-column zeever-animate zeever-move-up zeever-delay-<?php echo $delay; ?> is-layout-flow">
+                        <div class="wp-block-group has-black-background-color has-background" style="padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px">
+                            <figure class="wp-block-image size-full is-resized">
+                                <img src="<?php echo esc_url($service['image']); ?>" alt="<?php echo esc_attr($service['title']); ?>">
+                            </figure>
+                            <h3 class="has-text-align-left has-white-color has-text-color has-heading-4-font-size wp-block-heading" style="margin-top:20px;margin-bottom:20px">
+                                <?php echo esc_html($service['title']); ?>
+                            </h3>
+                            <p class="has-text-align-left has-zeever-bodytext-color has-text-color has-tiny-font-size">
+                                <?php echo esc_html($service['description']); ?>
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <?php 
-                $delay += 2;
-                endforeach; 
+                <?php
+                    $delay += 2;
+                endforeach;
                 ?>
             </div>
         </div>
