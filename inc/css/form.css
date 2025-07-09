@@ -1,0 +1,70 @@
+/* Contact Form 7 - Style personnalisé */
+.wpcf7 form {
+  background: #181818;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.wpcf7-form label {
+  display: block;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form textarea:focus {
+  border-color: #ffb400; /* Couleur Zeever primaire */
+  outline: none;
+}
+
+.wpcf7-form input[type="submit"],
+.wpcf7-form button {
+  background: #ffb400; /* Couleur Zeever primaire */
+  color: #181818;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.wpcf7-form input[type="submit"]:hover,
+.wpcf7-form button:hover {
+  background: #fff;
+  color: #ffb400;
+}
+
+.wpcf7-response-output {
+  margin-top: 1rem;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #222;
+  color: #ffb400;
+  border: 1px solid #ffb400;
+  font-weight: 500;
+  text-align: center;
+}
