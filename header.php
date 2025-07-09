@@ -480,7 +480,7 @@
             margin: 0 0 1em
         }
 
-        .wp-block-image img {
+        .wp-services-section .wp-block-image img {
             box-sizing: border-box;
             height: auto;
             max-width: 25%;

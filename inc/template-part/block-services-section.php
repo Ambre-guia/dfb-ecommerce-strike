@@ -54,7 +54,7 @@ if (!isset($args['services']) || empty($args['services'])) {
             </div>
 
             <!-- SERVICES -->
-            <div class="wp-block-columns is-layout-flex">
+            <div class="wp-block-columns is-layout-flex wp-services-section">
                 <?php
                 $delay = 1;
                 foreach ($services as $service) :
