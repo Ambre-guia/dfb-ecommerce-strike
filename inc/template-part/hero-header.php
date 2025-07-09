@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part pour l'en-tête de page
  *
@@ -17,13 +18,13 @@ $show_projet_categories = isset($args['show_projet_categories']) ? $args['show_p
 
 <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-top:80px;padding-bottom:80px">
     <div class="wp-block-columns is-layout-flex">
-        <div class="wp-block-column" style="flex-basis:700px;">
+        <div class="wp-block-column" style="flex-basis:auto;">
             <h1 class="has-zeever-primary-color has-heading-1-font-size" style="font-weight:700;line-height:1.2;"><?php echo esc_html($title); ?></h1>
-            
+
             <?php if (!empty($subtitle)) : ?>
                 <p class="has-zeever-bodytext-color has-text-color"><?php echo esc_html($subtitle); ?></p>
             <?php endif; ?>
-            
+
             <?php if ($show_meta) : ?>
                 <div class="entry-meta">
                     <span class="posted-on">
@@ -42,7 +43,7 @@ $show_projet_categories = isset($args['show_projet_categories']) ? $args['show_p
                     <?php endif; ?>
                 </div>
             <?php endif; ?>
-            
+
             <?php if ($show_projet_categories) : ?>
                 <div class="projet-categories">
                     <?php
