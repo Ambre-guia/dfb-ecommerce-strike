@@ -34,14 +34,14 @@
 .wpcf7-form input[type="email"]:focus,
 .wpcf7-form input[type="tel"]:focus,
 .wpcf7-form textarea:focus {
-  border-color: #ffb400; /* Couleur Zeever primaire */
+  border-color: #007bff; /* Couleur Zeever primaire */
   outline: none;
 }
 
 .wpcf7-form input[type="submit"],
 .wpcf7-form button {
-  background: #ffb400; /* Couleur Zeever primaire */
-  color: #181818;
+  background: #007bff; /* Bleu Zeever */
+  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 0.75rem 2rem;
@@ -55,7 +55,7 @@
 .wpcf7-form input[type="submit"]:hover,
 .wpcf7-form button:hover {
   background: #fff;
-  color: #ffb400;
+  color: #007bff;
 }
 
 .wpcf7-response-output {
@@ -63,8 +63,8 @@
   border-radius: 8px;
   padding: 1rem;
   background: #222;
-  color: #ffb400;
-  border: 1px solid #ffb400;
+  border: 1px solid #007bff;
+  color: #007bff;
   font-weight: 500;
   text-align: center;
 }
@@ -85,7 +85,7 @@
 }
 
 .wpcf7-form select:focus {
-  border-color: #ffb400;
+  border-color: #007bff;
   outline: none;
 }
 
