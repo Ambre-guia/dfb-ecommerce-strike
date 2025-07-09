@@ -77,7 +77,7 @@ if (!isset($args['testimonials']) || empty($args['testimonials'])) {
                             <div class="wp-block-group has-border-color has-zeever-border-border-color has-black-background-color has-background" style="border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-style:solid;border-width:1px;padding-top:40px;padding-right:40px;padding-bottom:80px;padding-left:40px">
                                 <div class="wp-block-columns is-layout-flex">
                                     <div class="wp-block-column is-layout-flow">
-                                        <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo get_template_directory_uri(); ?>/asset/images/quote.webp" alt="" class="wp-image-136" width="60"></figure>
+                                        <figure class="wp-block-image aligncenter size-full is-resized"><img src="<?php echo get_template_directory_uri(); ?>/asset/image/quote.webp" alt="" class="wp-image-136" width="60"></figure>
                                     </div>
                                 </div>
 
