@@ -23,7 +23,7 @@ if (!isset($args['services']) || empty($args['services'])) {
         array(
             'title' => 'Web Development',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat bibendum turpis sit amet pretium.',
-            'image' => 'https://wp-themes.com/wp-content/themes/zeever/assets/img/ui-design.webp'
+            'image' => 'https://wp-themes.com/wp-content/themes/zeever/assets/img/web.webp'
         ),
         array(
             'title' => 'Social Media',
