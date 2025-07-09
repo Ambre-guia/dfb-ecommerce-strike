@@ -68,3 +68,28 @@
   font-weight: 500;
   text-align: center;
 }
+.wpcf7-form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.wpcf7-form select:focus {
+  border-color: #ffb400;
+  outline: none;
+}
+
+.wpcf7-form option {
+  background: #222;
+  color: #fff;
+}
