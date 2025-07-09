@@ -1,38 +1,66 @@
-<?php get_header(); ?>
+<?php
 
-<div class="container">
-    <div class="row">
-        <main id="primary" class="site-main col-12">
-            <header class="page-header">
-                <h1 class="page-title"><?php post_type_archive_title(); ?></h1>
-            </header>
-            <?php if (have_posts()) : ?>
-                <div class="produits-list row">
-                    <?php while (have_posts()) : the_post(); ?>
-                        <article id="post-<?php the_ID(); ?>" <?php post_class('produit-item col-md-4 mb-4'); ?>>
-                            <a href="<?php the_permalink(); ?>">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <div class="produit-thumb mb-2">
-                                        <?php the_post_thumbnail('medium'); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <h2 class="produit-title h5"><?php the_title(); ?></h2>
-                            </a>
-                            <div class="produit-excerpt">
+/**
+ * The template for displaying product archives
+ */
+
+get_header();
+?>
+
+<main id="primary" class="site-main">
+    <?php
+    // En-tête de l'archive
+    get_template_part('inc/template-part/hero-header', null, array(
+        'title' => 'Nos Produits',
+        'subtitle' => 'Découvrez notre catalogue'
+    ));
+    ?>
+
+    <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-bottom:100px;">
+        <?php if (have_posts()) : ?>
+            <div class="projets-grid">
+                <?php
+                while (have_posts()) :
+                    the_post();
+                ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
+                        <div class="projet-thumbnail">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                        <div class="projet-content">
+                            <h2 class="has-zeever-primary-color has-text-color">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h2>
+                            <div class="projet-categories">
+                                <?php
+                                $categories = get_the_terms(get_the_ID(), 'categorie-produit');
+                                if ($categories && !is_wp_error($categories)) :
+                                    foreach ($categories as $category) :
+                                        echo '<span class="projet-category">' . esc_html($category->name) . '</span>';
+                                    endforeach;
+                                endif;
+                                ?>
+                            </div>
+                            <div class="projet-excerpt">
                                 <?php the_excerpt(); ?>
                             </div>
-                            <div class="produit-categories">
-                                <?php the_terms(get_the_ID(), 'categorie-produit'); ?>
-                            </div>
-                        </article>
-                    <?php endwhile; ?>
-                </div>
-                <?php the_posts_pagination(); ?>
-            <?php else : ?>
-                <p><?php _e('Aucun produit trouvé.', 'dfb-ecommerce-strike'); ?></p>
-            <?php endif; ?>
-        </main>
-    </div>
-</div>
+                            <a href="<?php the_permalink(); ?>" class="read-more">Voir le produit</a>
+                        </div>
+                    </article>
+                <?php endwhile; ?>
+            </div>
 
-<?php get_footer(); ?>
+            <?php the_posts_navigation(); ?>
+
+        <?php else : ?>
+            <p class="has-zeever-bodytext-color has-text-color">Aucun produit trouvé.</p>
+        <?php endif; ?>
+    </div>
+</main>
+
+<?php
+get_footer();

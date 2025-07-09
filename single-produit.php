@@ -1,29 +1,51 @@
-<?php get_header(); ?>
+<?php
 
-<div class="container">
-    <div class="row">
-        <main id="primary" class="site-main col-12 col-md-8 mx-auto">
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class('produit-single'); ?>>
-                        <header class="entry-header mb-4">
-                            <h1 class="produit-title"><?php the_title(); ?></h1>
-                            <div class="produit-categories mb-2">
-                                <?php the_terms(get_the_ID(), 'categorie-produit'); ?>
-                            </div>
-                        </header>
+/**
+ * The template for displaying single product
+ */
+
+get_header();
+?>
+
+<main id="primary" class="site-main">
+    <?php
+    // En-tête personnalisé pour le produit
+    if (have_posts()) :
+        while (have_posts()) : the_post();
+            get_template_part('inc/template-part/hero-header', null, array(
+                'title' => get_the_title(),
+                'subtitle' => ''
+            ));
+    ?>
+            <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-bottom:100px;">
+                <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
+                    <div class="projet-thumbnail">
                         <?php if (has_post_thumbnail()) : ?>
-                            <div class="produit-thumb mb-4">
-                                <?php the_post_thumbnail('large'); ?>
-                            </div>
+                            <?php the_post_thumbnail('large'); ?>
                         <?php endif; ?>
-                        <div class="produit-content">
+                    </div>
+                    <div class="projet-content">
+                        <div class="projet-categories mb-2">
+                            <?php
+                            $categories = get_the_terms(get_the_ID(), 'categorie-produit');
+                            if ($categories && !is_wp_error($categories)) :
+                                foreach ($categories as $category) :
+                                    echo '<span class="projet-category">' . esc_html($category->name) . '</span>';
+                                endforeach;
+                            endif;
+                            ?>
+                        </div>
+                        <div class="projet-excerpt">
                             <?php the_content(); ?>
                         </div>
-                    </article>
-            <?php endwhile;
-            endif; ?>
-        </main>
-    </div>
-</div>
+                    </div>
+                </article>
+            </div>
+    <?php
+        endwhile;
+    endif;
+    ?>
+</main>
 
-<?php get_footer(); ?>
+<?php
+get_footer();
