@@ -1,0 +1,46 @@
+# Node.js dependencies
+node_modules
+.DS_Store
+
+# Environment variables
+.env
+# Optional npm cache directory
+.npmrc
+# Optional yarn cache directory
+.yarnrc
+# Optional lock files
+package-lock.json
+yarn.lock
+# Optional build artifacts
+build/
+# Optional test coverage reports
+test-coverage/
+# Optional logs
+logs/
+# Optional debug logs
+debug.log
+# Optional IDE files
+.idea/
+# Logs
+logs
+npm-debug.log*
+yarn-debug.log*
+
+# Dependency directories
+jspm_packages/  
+# Build directories
+dist/   
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+# Optional REPL history
+.node_repl_history
+
+# Optional VS Code settings
+.vscode/
