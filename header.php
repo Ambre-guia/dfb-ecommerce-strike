@@ -479,6 +479,13 @@
         .wp-block-image {
             margin: 0 0 1em
         }
+
+        .wp-block-image img {
+            box-sizing: border-box;
+            height: auto;
+            max-width: 25%;
+            vertical-align: bottom
+        }
     </style>
     <style id="wp-block-paragraph-inline-css">
         .is-small-text {
@@ -2057,62 +2064,62 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    
+
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Passer au contenu', 'dfb-ecommerce-strike'); ?></a>
         <div class="wp-site-blocks">
-        <header id="masthead" class="site-header">
-            <div class="wp-block-group has-black-background-color has-background is-layout-constrained">
-                <div class="site-header-inner">
-                    <div class="site-branding">
-                        <?php if (has_custom_logo()) : ?>
-                            <div class="site-logo">
-                                <?php the_custom_logo(); ?>
-                            </div>
-                        <?php else : ?>
-                            <h1 class="site-title">
-                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                                    <?php bloginfo('name'); ?>
-                                </a>
-                            </h1>
-                            <?php $description = get_bloginfo('description', 'display'); ?>
-                            <?php if ($description || is_customize_preview()) : ?>
-                                <p class="site-description"><?php echo $description; ?></p>
+            <header id="masthead" class="site-header">
+                <div class="wp-block-group has-black-background-color has-background is-layout-constrained">
+                    <div class="site-header-inner">
+                        <div class="site-branding">
+                            <?php if (has_custom_logo()) : ?>
+                                <div class="site-logo">
+                                    <?php the_custom_logo(); ?>
+                                </div>
+                            <?php else : ?>
+                                <h1 class="site-title">
+                                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                                        <?php bloginfo('name'); ?>
+                                    </a>
+                                </h1>
+                                <?php $description = get_bloginfo('description', 'display'); ?>
+                                <?php if ($description || is_customize_preview()) : ?>
+                                    <p class="site-description"><?php echo $description; ?></p>
+                                <?php endif; ?>
                             <?php endif; ?>
+                        </div><!-- .site-branding -->
+
+                        <nav id="site-navigation" class="main-navigation">
+                            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                                <span class="menu-toggle-icon"></span>
+                                <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
+                            </button>
+                            <?php
+                            wp_nav_menu(
+                                array(
+                                    'theme_location' => 'primary-menu',
+                                    'menu_id'        => 'primary-menu',
+                                    'container_class' => 'primary-menu-container',
+                                    'fallback_cb'     => false,
+                                )
+                            );
+                            ?>
+                        </nav><!-- #site-navigation -->
+
+                        <?php if (class_exists('WooCommerce')) : ?>
+                            <div class="site-header-cart">
+                                <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('Voir votre panier', 'dfb-ecommerce-strike'); ?>">
+                                    <span class="cart-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="9" cy="21" r="1"></circle>
+                                            <circle cx="20" cy="21" r="1"></circle>
+                                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                                </a>
+                            </div>
                         <?php endif; ?>
-                    </div><!-- .site-branding -->
-
-                    <nav id="site-navigation" class="main-navigation">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                            <span class="menu-toggle-icon"></span>
-                            <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
-                        </button>
-                        <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location' => 'primary-menu',
-                                'menu_id'        => 'primary-menu',
-                                'container_class' => 'primary-menu-container',
-                                'fallback_cb'     => false,
-                            )
-                        );
-                        ?>
-                    </nav><!-- #site-navigation -->
-
-                    <?php if (class_exists('WooCommerce')) : ?>
-                    <div class="site-header-cart">
-                        <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_attr_e('Voir votre panier', 'dfb-ecommerce-strike'); ?>">
-                            <span class="cart-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="9" cy="21" r="1"></circle>
-                                    <circle cx="20" cy="21" r="1"></circle>
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                                </svg>
-                            </span>
-                            <span class="count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                        </a>
                     </div>
-                    <?php endif; ?>
                 </div>
-            </div>
-        </header><!-- #masthead -->
+            </header><!-- #masthead -->
