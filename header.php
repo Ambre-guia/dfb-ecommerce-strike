@@ -13,7 +13,7 @@
     <header class="mast-head">
         <div class="container">
             <?php if (has_custom_logo()) : ?>
-                <div class="site-logo">
+                <div class="logo">
                     <?php the_custom_logo(); ?>
                 </div>
             <?php else : ?>
