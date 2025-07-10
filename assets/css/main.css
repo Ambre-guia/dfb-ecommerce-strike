@@ -1,0 +1,332 @@
+/* ===============
+   PRIMARY
+   =============== */
+
+body {
+  font-family: var(--font-default);
+  color: var(--main_primary_dark);
+  font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main_primary);
+  transition: all 0.3s;
+}
+a:not(.btn):hover {
+  opacity: 0.8;
+}
+@media screen and (min-width: 990px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* ==| Colors |== */
+
+.lightgrey {
+  color: var(--lightgrey);
+}
+.grey {
+  color: var(--grey);
+}
+.mediumgrey {
+  color: var(--mediumgrey);
+}
+.darkgrey {
+  color: var(--darkgrey);
+}
+
+.white {
+  color: var(--white);
+}
+
+.primary-dark {
+  color: var(--main_primary_dark);
+}
+.primary {
+  color: var(--main_primary);
+}
+.primary-medium {
+  color: var(--main_primary_medium);
+}
+.primary-light {
+  color: var(--main_primary_light);
+}
+
+.lightgreen {
+  color: var(--lightgreen);
+}
+.green {
+  color: var(--green);
+}
+
+/* ==| Backgrounds |== */
+
+.bg-lightgrey {
+  background-color: var(--lightgrey);
+}
+.bg-grey {
+  background-color: var(--grey);
+}
+.bg-mediumgrey {
+  background-color: var(--mediumgrey);
+}
+.bg-darkgrey {
+  background-color: var(--darkgrey);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.bg-lightprimary {
+  background-color: var(--main_primary_light);
+}
+.bg-darkprimary {
+  background-color: var(--main_primary_dark);
+}
+.bg-primarymedium {
+  background-color: var(--main_primary_medium);
+}
+.bg-primary {
+  background-color: var(--main_primary);
+}
+
+.bg-lightgreen {
+  background-color: var(--lightgreen);
+}
+.bg-verylightgreen {
+  background-color: var(--verylightgreen);
+}
+.bg-green {
+  background-color: var(--green);
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0 5px;
+}
+
+/* ==| Tables |== */
+
+/* ==| Lists |== */
+
+/* ==| Buttons_like |== */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-small);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+}
+.btn-wide {
+  width: 100%;
+}
+.btn-link {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+}
+.btn img {
+  vertical-align: middle;
+  margin: 0 0.1em;
+}
+.btn-primary {
+  color: var(--white);
+  background-color: var(--main_primary);
+  border-color: var(--main_primary);
+}
+.btn-primary:hover {
+  color: var(--white);
+  background-color: var(--main_primary_medium);
+  border-color: var(--main_primary_medium);
+}
+.btn-primary:focus,
+.btn-primary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(98, 182, 204, 0.5);
+}
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:focus,
+.btn-primary.focus {
+  color: var(--white);
+  background-color: var(--main_primary_dark);
+  border-color: var(--main_primary_dark);
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-image: none;
+}
+
+.btn-darkprimary {
+  color: var(--white);
+  background-color: var(--main_primary_dark);
+  border-color: var(--main_primary_dark);
+}
+.btn-darkprimary:hover {
+  color: var(--white);
+  background-color: var(--main_primary_medium);
+  border-color: var(--main_primary_medium);
+}
+.btn-darkprimary:focus,
+.btn-darkprimary.focus {
+  box-shadow: 0 0 0 0.2rem rgba(98, 182, 204, 0.5);
+}
+.btn-darkprimary:active,
+.btn-darkprimary.active,
+.btn-darkprimary:focus,
+.btn-darkprimary.focus {
+  color: var(--white);
+  background-color: var(--main_primary_light);
+  border-color: var(--main_primary_light);
+}
+
+.btn-primary.disabled,
+.btn-primary:disabled,
+.btn-primary.disabled:hover,
+.btn-primary:disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary:disabled:focus,
+.btn-primary.disabled.focus,
+.btn-primary:disabled.focus,
+.btn-primary.disabled:active,
+.btn-primary:disabled:active,
+.btn-primary.disabled.active,
+.btn-primary:disabled.active,
+.btn-primary.disabled:focus,
+.btn-primary:disabled:focus,
+.btn-primary.disabled.focus,
+.btn-primary.disabled:active,
+.btn-primary:disabled:active,
+.btn-primary.disabled.active,
+.btn-primary.disabled:hover,
+.btn-primary:disabled:hover,
+.btn-primary.disabled:focus,
+.btn-primary:disabled:focus,
+.btn-primary.disabled:active,
+.btn-primary:disabled:active,
+.btn-darkprimary.disabled,
+.btn-darkprimary:disabled,
+.btn-darkprimary.disabled:hover,
+.btn-darkprimary:disabled:hover,
+.btn-darkprimary.disabled:focus,
+.btn-darkprimary:disabled:focus,
+.btn-darkprimary.disabled.focus,
+.btn-darkprimary.disabled:active,
+.btn-darkprimary:disabled.active {
+  color: var(--white);
+  background-color: var(--main_primary_light);
+  border-color: var(--main_primary_light);
+}
+
+.readmorelink {
+  display: inline-block;
+  color: var(--main_primary_dark);
+}
+
+.readmorelink:after {
+  content: ">";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 0.3em;
+  background-size: 100%;
+  transition: all 0.1s ease-in-out;
+}
+.readmorelink:hover:after {
+  margin-left: 0.5em;
+}
+
+/* ==| Forms |== */
+
+form input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--mediumgrey);
+  border-radius: var(--radius-small);
+  font-size: 1rem;
+  color: var(--darkgrey);
+  background-color: var(--white);
+  transition: all 0.15s ease-in-out;
+}
+form input[type="submit"],
+form input[type="button"],
+form input[type="reset"] {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-small);
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+}
+
+form,
+select,
+select option {
+  font-family: var(--font-default);
+  font-size: 1rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+select {
+  display: inline;
+}
+option {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ==| Section |== */
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--main_primary_dark);
+  margin: 1em 0;
+}
+
+.section-header {
+  text-align: center;
+}
+
+.section-footer > .btn {
+  margin: 1em;
+}
+
+.tetiere {
+  color: var(--main_primary_medium);
+  font-family: var(--font-cond);
+  font-size: 1.4em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+}
+
+.section-content {
+  margin: 1em 0;
+}
+
+@media screen and (min-width: 1600px) {
+  .section-title {
+    font-size: 2.5em;
+  }
+  .tetiere {
+    font-size: 1.6em;
+  }
+}
+
+/* ===============
+   HEADER
+   =============== */

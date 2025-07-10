@@ -4,6 +4,7 @@
 
 :root {
   --white: #fff;
+
   --main_primary_dark: #102034;
   --main_primary: #62b6cc;
   --main_primary_medium: #3d5a80;
@@ -22,9 +23,11 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
+
   --font-default: "Noto Sans", sans-serif;
   --font-title: "genos", serif;
   --font-cond: "Inter", sans-serif;
+
   --radius-big: 30px;
   --radius-small: 15px;
 }
