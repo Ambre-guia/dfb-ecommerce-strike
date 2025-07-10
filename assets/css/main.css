@@ -6,6 +6,33 @@ body {
   font-family: var(--font-default);
   color: var(--main_primary_dark);
   font-size: 15px;
+  margin: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden] {
+  display: none;
 }
 
 a {
@@ -16,6 +43,7 @@ a {
 a:not(.btn):hover {
   opacity: 0.8;
 }
+
 @media screen and (min-width: 990px) {
   body {
     font-size: 16px;
@@ -330,3 +358,39 @@ option {
 /* ===============
    HEADER
    =============== */
+
+.mast-head {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 115px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.3);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.mast-head .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+}
+
+.mast-head .logo {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  max-width: 70px;
+  max-height: 70px;
+}
+
+.mast-head .logo img {
+  width: 100%;
+  height: auto;
+}
