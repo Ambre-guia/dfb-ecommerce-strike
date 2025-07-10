@@ -7,58 +7,58 @@
 get_header();
 ?>
 
-<main id="primary" class="site-main">
+<main id="primary-content" class="site-main">
     <?php
     // En-tête de l'archive
     get_template_part('inc/template-part/hero-header', null, array(
-        'title' => 'Nos Produits',
+        'title' => 'Nos Tarifs',
         'subtitle' => 'Découvrez notre catalogue'
     ));
     ?>
 
-    <div class="wp-block-group has-black-background-color has-background is-layout-constrained" style="padding-bottom:100px;">
-        <?php if (have_posts()) : ?>
-            <div class="projets-grid">
-                <?php
-                while (have_posts()) :
-                    the_post();
-                ?>
-                    <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
-                        <div class="projet-thumbnail">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <a href="<?php the_permalink(); ?>">
-                                    <?php the_post_thumbnail('large'); ?>
-                                </a>
-                            <?php endif; ?>
+    >
+    <?php if (have_posts()) : ?>
+        <div class="tarifs-grid">
+            <?php
+            while (have_posts()) :
+                the_post();
+            ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
+                    <div class="tarif-thumbnail">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <?php the_post_thumbnail('large'); ?>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="tarif-content">
+                        <h2 class="tarif-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h2>
+                        <div class="tarif-categories">
+                            <?php
+                            $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
+                            if ($categories && !is_wp_error($categories)) :
+                                foreach ($categories as $category) :
+                                    echo '<span class="tarif-category">' . esc_html($category->name) . '</span>';
+                                endforeach;
+                            endif;
+                            ?>
                         </div>
-                        <div class="projet-content">
-                            <h2 class="has-zeever-primary-color has-text-color">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h2>
-                            <div class="projet-categories">
-                                <?php
-                                $categories = get_the_terms(get_the_ID(), 'categorie-produit');
-                                if ($categories && !is_wp_error($categories)) :
-                                    foreach ($categories as $category) :
-                                        echo '<span class="projet-category">' . esc_html($category->name) . '</span>';
-                                    endforeach;
-                                endif;
-                                ?>
-                            </div>
-                            <div class="projet-excerpt">
-                                <?php the_excerpt(); ?>
-                            </div>
-                            <a href="<?php the_permalink(); ?>" class="read-more">Voir le produit</a>
+                        <div class="tarif-excerpt">
+                            <?php the_excerpt(); ?>
                         </div>
-                    </article>
-                <?php endwhile; ?>
-            </div>
+                        <a href="<?php the_permalink(); ?>" class="read-more">Voir le produit</a>
+                    </div>
+                </article>
+            <?php endwhile; ?>
+        </div>
 
-            <?php the_posts_navigation(); ?>
+        <?php the_posts_navigation(); ?>
 
-        <?php else : ?>
-            <p class="has-zeever-bodytext-color has-text-color">Aucun produit trouvé.</p>
-        <?php endif; ?>
+    <?php else : ?>
+        <p class="error-if">Aucun produit trouvé.</p>
+    <?php endif; ?>
     </div>
 </main>
 
