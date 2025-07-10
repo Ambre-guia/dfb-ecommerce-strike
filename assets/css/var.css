@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --white: #fff;
+  --main_primary_dark: #102034;
+  --main_primary: #62b6cc;
+  --main_primary_medium: #3d5a80;
+  --main_primary_light: #b5d9da;
+
+  --green: #018793;
+  --lightgreen: #deeaeb;
+
+  --grey: #737b7d;
+  --mediumgrey: #92a1ac;
+  --lightgrey: #f5f5f5;
+  --darkgrey: #8497ad;
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-default: "Noto Sans", sans-serif;
+  --font-title: "genos", serif;
+  --font-cond: "Inter", sans-serif;
+  --radius-big: 30px;
+  --radius-small: 15px;
+}
