@@ -9,38 +9,41 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <!-- Header Section -->
+    <header class="mast-head">
+        <div class="container">
+            <?php if (has_custom_logo()) : ?>
+                <div class="site-logo">
+                    <?php the_custom_logo(); ?>
+                </div>
+            <?php else : ?>
+                <h1 class="site-title">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                        <?php bloginfo('name'); ?>
+                    </a>
+                </h1>
+                <?php $description = get_bloginfo('description', 'display'); ?>
+                <?php if ($description || is_customize_preview()) : ?>
+                    <p class="site-description"><?php echo $description; ?></p>
+                <?php endif; ?>
+            <?php endif; ?>
 
-
-    <?php if (has_custom_logo()) : ?>
-        <div class="site-logo">
-            <?php the_custom_logo(); ?>
+            <nav id="site-navigation" class="main-navigation">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                    <span class="menu-toggle-icon"></span>
+                    <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
+                </button>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'primary-menu',
+                        'menu_id'        => 'primary-menu',
+                        'container_class' => 'primary-menu-container',
+                        'fallback_cb'     => false,
+                    )
+                );
+                ?>
+            </nav>
+            <a href="#" class="donate-link">Donate</a>
         </div>
-    <?php else : ?>
-        <h1 class="site-title">
-            <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
-                <?php bloginfo('name'); ?>
-            </a>
-        </h1>
-        <?php $description = get_bloginfo('description', 'display'); ?>
-        <?php if ($description || is_customize_preview()) : ?>
-            <p class="site-description"><?php echo $description; ?></p>
-        <?php endif; ?>
-    <?php endif; ?>
-    </div><!-- .site-branding -->
-
-    <nav id="site-navigation" class="main-navigation">
-        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-            <span class="menu-toggle-icon"></span>
-            <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
-        </button>
-        <?php
-        wp_nav_menu(
-            array(
-                'theme_location' => 'primary-menu',
-                'menu_id'        => 'primary-menu',
-                'container_class' => 'primary-menu-container',
-                'fallback_cb'     => false,
-            )
-        );
-        ?>
-    </nav><!-- #site-navigation -->
+    </header>
