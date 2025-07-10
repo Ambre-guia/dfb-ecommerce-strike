@@ -1,4 +1,4 @@
-<section class="hero-frontpage">
+<section class="hero-frontpage nopadding">
     <div id="slider" class="hero-slider">
 
         <div class="slider-inner">
