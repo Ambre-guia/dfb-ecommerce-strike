@@ -647,7 +647,7 @@ option {
   width: 100%;
   height: 100%;
   border-radius: 100%;
-  border: 1px solid rdgba(98, 182, 204, 0.5);
+  border: 1px solid rgba(98, 182, 204, 0.5);
   opacity: 0;
   transition: all 0.4s ease-in-out;
 }
