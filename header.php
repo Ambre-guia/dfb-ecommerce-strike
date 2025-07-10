@@ -28,16 +28,19 @@
                 <?php endif; ?>
             <?php endif; ?>
 
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                    <span class="menu-toggle-icon"></span>
-                    <span class="screen-reader-text"><?php esc_html_e('Menu', 'dfb-ecommerce-strike'); ?></span>
+            <nav id="main-nav" class="main-navigation">
+
+                <button class="hamburger hamburger--emphatic" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
                 </button>
                 <?php
                 wp_nav_menu(
                     array(
                         'theme_location' => 'primary-menu',
                         'menu_id'        => 'primary-menu',
+                        'container'      => 'ul',
                         'container_class' => 'primary-menu-container',
                         'fallback_cb'     => false,
                     )
