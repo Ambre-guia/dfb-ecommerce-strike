@@ -383,9 +383,6 @@ option {
 
 .mast-head .logo {
   display: block;
-  position: absolute;
-  top: 20%;
-  left: 20%;
   max-width: 70px;
   max-height: 70px;
 }
