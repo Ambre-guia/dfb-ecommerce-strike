@@ -28,7 +28,7 @@
                 <?php endif; ?>
             <?php endif; ?>
 
-            <nav id="main-nav" class="main-navigation">
+            <nav id="main-navigation" class="main-nav">
 
                 <button class="hamburger hamburger--emphatic" type="button">
                     <span class="hamburger-box">
