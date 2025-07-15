@@ -1,6 +1,10 @@
-<section class="hero-frontpage nopadding ">
+<section class="hero-frontpage nopadding">
     <div id="slider" class="hero-slider">
-
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" />
+        
         <div class="slider-inner">
             <div id="slider-content" class="slider-content">
                 <div class="meta">Titre</div>
@@ -17,21 +21,12 @@
             <span data-slide-status="2">Endangered</span>
             <span data-slide-status="3">Least Concern</span>
         </div>
-    </div>
-    <div class="slider-images">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" />
-
-    </div>
-
-
-
-    <div id="pagination" class="slider-pagination">
-        <button class="btn-slider active" data-slide="0"></button>
-        <button class="btn-slider" data-slide="1"></button>
-        <button class="btn-slider" data-slide="2"></button>
-        <button class="btn-slider" data-slide="3"></button>
+        
+        <div id="pagination" class="slider-pagination">
+            <button class="btn-slider active" data-slide="0"></button>
+            <button class="btn-slider" data-slide="1"></button>
+            <button class="btn-slider" data-slide="2"></button>
+            <button class="btn-slider" data-slide="3"></button>
+        </div>
     </div>
 </section>
