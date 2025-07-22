@@ -55,8 +55,7 @@
                     $index = 0;
                     $tarifs->rewind_posts();
                     while ($tarifs->have_posts()) : $tarifs->the_post();
-                        $active_class = $index === 0 ? ' active' : '';
-                        echo '<a href="' . get_the_permalink() . '" data-slide-link="' . $index . '" class="btn-slider readmorelink white' . $active_class . '" style="display: ' . ($index === 0 ? 'block' : 'none') . '">En savoir plus sur ' . get_the_title() . '</a>';
+                        echo '<a href="' . get_the_permalink() . '" data-slide-link="' . $index . '" class="btn readmorelink white' . $active_class . '" style="display: ' . ($index === 0 ? 'block' : 'none') . '">En savoir plus sur ' . get_the_title() . '</a>';
                         $index++;
                     endwhile;
 
