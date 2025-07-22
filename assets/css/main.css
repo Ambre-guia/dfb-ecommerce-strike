@@ -272,9 +272,6 @@ a:not(.btn):hover {
 .readmorelink:hover {
   text-decoration: underline;
 }
-.readmorelink:hover:after {
-  margin-left: 0.5em;
-}
 
 /* ==| Forms |== */
 
