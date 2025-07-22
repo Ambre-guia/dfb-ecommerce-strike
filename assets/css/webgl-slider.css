@@ -68,15 +68,8 @@
   transform: scale(1.2);
 }
 
-.slide-data [data-slide-title],
-.slide-data [data-slide-status],
-#slider > [data-slide-title],
-#slider > [data-slide-status] {
-  display: none;
-}
-
-#slider-content [data-slide-title],
-#slider-content [data-slide-status] {
+[data-slide-title],
+[data-slide-status] {
   display: block;
 }
 
