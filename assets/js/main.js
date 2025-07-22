@@ -198,9 +198,8 @@ function initSlider() {
 
             document
               .getElementById("pagination")
-              .querySelectorAll(".active")[0].className = "";
-            this.className = "active";
-            this.classList.add("btn-slider"); // Ajoutez cette ligne
+              .querySelectorAll(".active")[0].className = "btn-slider";
+            this.className = "btn-slider active";
 
             let slideId = parseInt(this.dataset.slide, 10);
 
