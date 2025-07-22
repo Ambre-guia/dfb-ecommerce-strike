@@ -268,7 +268,7 @@ a:not(.btn):hover {
   background-size: 100%;
   transition: all 0.1s ease-in-out;
 }
-.readmorelink:after {
+.readmorelink:hover {
   text-decoration: underline;
 }
 .readmorelink:hover:after {
