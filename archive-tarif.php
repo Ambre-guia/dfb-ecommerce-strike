@@ -1,64 +1,64 @@
 <?php
-
-/**
- * The template for displaying product archives
- */
-
 get_header();
 ?>
 
 <main id="primary-content" class="site-main">
-    <?php
-    // En-tête de l'archive
-    get_template_part('inc/template-part/hero-header', null, array(
-        'title' => 'Nos Tarifs',
-        'subtitle' => 'Découvrez notre catalogue'
-    ));
-    ?>
+    <div class="hero-header">
+        <div class="container">
+            <h1 class="entry-title">Nos Tarifs</h1>
+            <p class="subtitle">Découvrez nos offres adaptées à vos besoins</p>
+        </div>
+    </div>
 
-    >
-    <?php if (have_posts()) : ?>
-        <div class="tarifs-grid">
-            <?php
-            while (have_posts()) :
-                the_post();
-            ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
-                    <div class="tarif-thumbnail">
+    <div class="container">
+        <?php if (have_posts()) : ?>
+            <div class="tarifs-grid">
+                <?php while (have_posts()) : the_post(); ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class('tarif-card'); ?>>
                         <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('large'); ?>
-                            </a>
+                            <div class="tarif-thumbnail">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </a>
+                            </div>
                         <?php endif; ?>
-                    </div>
-                    <div class="tarif-content">
-                        <h2 class="tarif-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h2>
-                        <div class="tarif-categories">
+                        
+                        <div class="tarif-content">
+                            <h2 class="tarif-title">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h2>
+                            
                             <?php
                             $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
-                            if ($categories && !is_wp_error($categories)) :
-                                foreach ($categories as $category) :
-                                    echo '<span class="tarif-category">' . esc_html($category->name) . '</span>';
-                                endforeach;
-                            endif;
-                            ?>
+                            if ($categories && !is_wp_error($categories)) : ?>
+                                <div class="tarif-categories">
+                                    <?php foreach ($categories as $category) : ?>
+                                        <span class="tarif-category"><?php echo esc_html($category->name); ?></span>
+                                    <?php endforeach; ?>
+                                </div>
+                            <?php endif; ?>
+                            
+                            <div class="tarif-excerpt">
+                                <?php the_excerpt(); ?>
+                            </div>
+                            
+                            <a href="<?php the_permalink(); ?>" class="btn btn-primary">En savoir plus</a>
                         </div>
-                        <div class="tarif-excerpt">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="read-more">Voir le produit</a>
-                    </div>
-                </article>
-            <?php endwhile; ?>
-        </div>
+                    </article>
+                <?php endwhile; ?>
+            </div>
 
-        <?php the_posts_navigation(); ?>
+            <?php
+            the_posts_pagination(array(
+                'prev_text' => '&laquo; Précédent',
+                'next_text' => 'Suivant &raquo;',
+                'screen_reader_text' => ' '
+            ));
+            ?>
 
-    <?php else : ?>
-        <p class="error-if">Aucun produit trouvé.</p>
-    <?php endif; ?>
+        <?php else : ?>
+            <p class="no-results">Aucun tarif disponible pour le moment.</p>
+        <?php endif; ?>
     </div>
 </main>
 
