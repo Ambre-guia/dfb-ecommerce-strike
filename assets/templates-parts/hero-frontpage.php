@@ -1,11 +1,9 @@
 <section class="hero-frontpage nopadding">
     <div id="slider">
-        <div class="slider-images">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" />
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" />
-        </div>
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" />
         
         <div class="slider-inner">
             <div id="slider-content" class="slider-content">
@@ -15,8 +13,7 @@
                 <div id="slide-status" class="slider-status">Critically Endangered</div>
             </div>
             
-            <!-- Masquer les données des slides -->
-            <div class="slide-data" style="display: none;">
+            <div class="slide-data">
                 <span data-slide-title="0">Amur <br>Leopard</span>
                 <span data-slide-title="1">Asiatic <br>Lion</span>
                 <span data-slide-title="2">Siberian <br>Tiger</span>
