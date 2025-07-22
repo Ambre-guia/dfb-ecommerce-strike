@@ -256,6 +256,7 @@ a:not(.btn):hover {
 
 .readmorelink {
   display: inline-block;
+  text-transform: none;
 }
 
 .readmorelink:after {
@@ -267,8 +268,11 @@ a:not(.btn):hover {
   background-size: 100%;
   transition: all 0.1s ease-in-out;
 }
+.readmorelink:after {
+  text-decoration: underline;
+}
 .readmorelink:hover:after {
-  margin-left: 0.5em;
+  margin-left: 0.6em;
 }
 
 /* ==| Forms |== */
