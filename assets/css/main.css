@@ -681,3 +681,126 @@ option {
     transform: scale3d(0.5, 0.5, 1);
   }
 }
+/* Tarifs Grid */
+.tarifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.projet-item {
+    background: var(--white);
+    border-radius: var(--radius-small);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.projet-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.tarif-thumbnail {
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.tarif-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.projet-item:hover .tarif-thumbnail img {
+    transform: scale(1.05);
+}
+
+.tarif-content {
+    padding: 1.5rem;
+}
+
+.tarif-title {
+    font-size: 1.5em;
+    margin: 0 0 1rem;
+    color: var(--main_primary_dark);
+}
+
+.tarif-title a {
+    color: inherit;
+}
+
+.tarif-categories {
+    margin-bottom: 1rem;
+}
+
+.tarif-category {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 0.2em;
+    background: var(--main_primary_light);
+    color: var(--main_primary_dark);
+    border-radius: var(--radius-small);
+    font-size: 0.9em;
+}
+
+.tarif-excerpt {
+    color: var(--darkgrey);
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--main_primary);
+    color: var(--white);
+    border-radius: var(--radius-small);
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background: var(--main_primary_medium);
+    opacity: 1;
+}
+
+/* Single Tarif */
+.tarif-single .hero-header {
+    background: var(--main_primary);
+    color: var(--white);
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.tarif-single .entry-title {
+    font-size: 3em;
+    margin: 0 0 1rem;
+}
+
+.tarif-single .tarif-categories {
+    margin-bottom: 0;
+}
+
+.tarif-single .tarif-category {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.tarif-single .entry-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
