@@ -294,6 +294,20 @@ function initSlider() {
 
     const el = document.getElementById("slider");
     const imgs = Array.from(el.querySelectorAll("img"));
+
+    // Initialiser les textes au chargement
+    const slideTitleEl = document.getElementById("slide-title");
+    const slideStatusEl = document.getElementById("slide-status");
+    const initialTitle = document.querySelector(
+      '[data-slide-title="0"]'
+    ).innerHTML;
+    const initialStatus = document.querySelector(
+      '[data-slide-status="0"]'
+    ).innerHTML;
+
+    slideTitleEl.innerHTML = initialTitle;
+    slideStatusEl.innerHTML = initialStatus;
+
     new displacementSlider({
       parent: el,
       images: imgs,
