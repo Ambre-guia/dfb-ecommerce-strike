@@ -70,7 +70,7 @@
 
 [data-slide-title],
 [data-slide-status] {
-  display: block;
+  display: none;
 }
 
 .meta {
