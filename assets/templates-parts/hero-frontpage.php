@@ -27,13 +27,27 @@
                     // Afficher la première description comme statut initial
                     $tarifs->rewind_posts();
                     $tarifs->the_post();
-                    echo '<div id="slide-status" class="slider-status">' . get_the_category() . '</div>';
+                    $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
+                    $cat_names = array();
+                    if ($categories && !is_wp_error($categories)) {
+                        foreach($categories as $category) {
+                            $cat_names[] = $category->name;
+                        }
+                    }
+                    echo '<div id="slide-status" class="slider-status">' . implode(', ', $cat_names) . '</div>';
 
                     // Générer les spans pour toutes les descriptions
                     $index = 0;
                     $tarifs->rewind_posts();
                     while ($tarifs->have_posts()) : $tarifs->the_post();
-                        echo '<span data-slide-status="' . $index . '">' . get_the_category() . '</span>';
+                        $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
+                        $cat_names = array();
+                        if ($categories && !is_wp_error($categories)) {
+                            foreach($categories as $category) {
+                                $cat_names[] = $category->name;
+                            }
+                        }
+                        echo '<span data-slide-status="' . $index . '">' . implode(', ', $cat_names) . '</span>';
                         $index++;
                     endwhile;
                 endif;
