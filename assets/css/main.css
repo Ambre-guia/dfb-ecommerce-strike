@@ -256,7 +256,6 @@ a:not(.btn):hover {
 
 .readmorelink {
   display: inline-block;
-  color: var(--main_primary_dark);
 }
 
 .readmorelink:after {
