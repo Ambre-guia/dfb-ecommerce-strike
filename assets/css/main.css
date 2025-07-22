@@ -273,8 +273,7 @@ a:not(.btn):hover {
   text-decoration: underline;
 }
 .readmorelink:hover:after {
-  margin-left: 0.6em;
-  text-decoration: underline;
+  margin-left: 0.5em;
 }
 
 /* ==| Forms |== */
