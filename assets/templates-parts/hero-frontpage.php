@@ -30,7 +30,7 @@
                     $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
                     $cat_names = array();
                     if ($categories && !is_wp_error($categories)) {
-                        foreach($categories as $category) {
+                        foreach ($categories as $category) {
                             $cat_names[] = $category->name;
                         }
                     }
@@ -43,13 +43,17 @@
                         $categories = get_the_terms(get_the_ID(), 'categorie-tarif');
                         $cat_names = array();
                         if ($categories && !is_wp_error($categories)) {
-                            foreach($categories as $category) {
+                            foreach ($categories as $category) {
                                 $cat_names[] = $category->name;
                             }
                         }
                         echo '<span data-slide-status="' . $index . '">' . implode(', ', $cat_names) . '</span>';
                         $index++;
                     endwhile;
+
+                    echo '<button href="' . get_the_permalink() . '" id="btn-slider" class="btn-slider readmorelink">En savoir plus sur ' . get_the_title() . '</button>';
+
+
                 endif;
                 wp_reset_postdata();
                 ?>
