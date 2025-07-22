@@ -200,6 +200,7 @@ function initSlider() {
               .getElementById("pagination")
               .querySelectorAll(".active")[0].className = "";
             this.className = "active";
+            this.classList.add("btn-slider"); // Ajoutez cette ligne
 
             let slideId = parseInt(this.dataset.slide, 10);
 
