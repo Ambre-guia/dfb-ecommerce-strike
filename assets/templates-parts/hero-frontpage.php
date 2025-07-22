@@ -2,31 +2,73 @@
     <div id="slider">
         <div class="slider-inner">
             <div id="slider-content" class="slider-content">
-                <div class="meta">Titre</div>
-                <h2 id="slide-title">Amur <br>Leopard</h2>
-                <span data-slide-title="0">Amur <br>Leopard</span>
-                <span data-slide-title="1">Asiatic <br>Lion</span>
-                <span data-slide-title="2">Siberian <br>Tiger</span>
-                <span data-slide-title="3">Brown <br>Bear</span>
-                <div class="meta">Status</div>
-                <div id="slide-status" class="slider-status">Critically Endangered</div>
-                <span data-slide-status="0">Critically Endangered</span>
-                <span data-slide-status="1">Endangered</span>
-                <span data-slide-status="2">Endangered</span>
-                <span data-slide-status="3">Least Concern</span>
+                <div class="meta">Tarif</div>
+                <?php
+                $tarifs = new WP_Query(array(
+                    'post_type' => 'tarif',
+                    'posts_per_page' => -1
+                ));
+
+                if ($tarifs->have_posts()) :
+                    // Afficher le premier titre comme titre initial
+                    $tarifs->the_post();
+                    echo '<h2 id="slide-title">' . get_the_title() . '</h2>';
+                    $tarifs->rewind_posts();
+
+                    // Générer les spans pour tous les titres
+                    $index = 0;
+                    while ($tarifs->have_posts()) : $tarifs->the_post();
+                        echo '<span data-slide-title="' . $index . '">' . get_the_title() . '</span>';
+                        $index++;
+                    endwhile;
+
+                    echo '<div class="meta">Description</div>';
+
+                    // Afficher la première description comme statut initial
+                    $tarifs->rewind_posts();
+                    $tarifs->the_post();
+                    echo '<div id="slide-status" class="slider-status">' . get_the_excerpt() . '</div>';
+
+                    // Générer les spans pour toutes les descriptions
+                    $index = 0;
+                    $tarifs->rewind_posts();
+                    while ($tarifs->have_posts()) : $tarifs->the_post();
+                        echo '<span data-slide-status="' . $index . '">' . get_the_excerpt() . '</span>';
+                        $index++;
+                    endwhile;
+                endif;
+                wp_reset_postdata();
+                ?>
             </div>
         </div>
 
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/leopard2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/lion2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/tiger2.jpg" />
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/123024/bear2.jpg" />
+        <?php
+        // Afficher les images
+        if ($tarifs->have_posts()) :
+            $tarifs->rewind_posts();
+            while ($tarifs->have_posts()) : $tarifs->the_post();
+                if (has_post_thumbnail()) :
+                    echo get_the_post_thumbnail();
+                endif;
+            endwhile;
+        endif;
+        wp_reset_postdata();
+        ?>
 
         <div id="pagination" class="slider-pagination">
-            <button class="btn-slider active" data-slide="0"></button>
-            <button class="btn-slider" data-slide="1"></button>
-            <button class="btn-slider" data-slide="2"></button>
-            <button class="btn-slider" data-slide="3"></button>
+            <?php
+            // Générer la pagination
+            if ($tarifs->have_posts()) :
+                $index = 0;
+                $tarifs->rewind_posts();
+                while ($tarifs->have_posts()) : $tarifs->the_post();
+                    $active_class = $index === 0 ? ' active' : '';
+                    echo '<button class="btn-slider' . $active_class . '" data-slide="' . $index . '"></button>';
+                    $index++;
+                endwhile;
+            endif;
+            wp_reset_postdata();
+            ?>
         </div>
     </div>
 </section>
