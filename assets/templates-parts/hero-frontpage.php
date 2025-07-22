@@ -8,7 +8,7 @@
         <div class="slider-inner">
             <div id="slider-content" class="slider-content">
                 <div class="meta">Titre</div>
-                <h2 id="slide-title"><?php echo get_the_title(); ?></h2>
+                <h2 id="slide-title">Amur <br>Leopard</h2>
                 <div class="meta">Status</div>
                 <div id="slide-status" class="slider-status">Critically Endangered</div>
             </div>
