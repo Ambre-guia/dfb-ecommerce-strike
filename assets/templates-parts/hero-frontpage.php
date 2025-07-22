@@ -2,7 +2,7 @@
     <div id="slider">
         <div class="slider-inner">
             <div id="slider-content" class="slider-content">
-                <div class="meta">Tarif</div>
+                <div class="meta">Services</div>
                 <?php
                 $tarifs = new WP_Query(array(
                     'post_type' => 'tarif',
@@ -22,18 +22,18 @@
                         $index++;
                     endwhile;
 
-                    echo '<div class="meta">Description</div>';
+                    echo '<div class="meta">Besoin</div>';
 
                     // Afficher la première description comme statut initial
                     $tarifs->rewind_posts();
                     $tarifs->the_post();
-                    echo '<div id="slide-status" class="slider-status">' . get_the_excerpt() . '</div>';
+                    echo '<div id="slide-status" class="slider-status">' . get_the_category() . '</div>';
 
                     // Générer les spans pour toutes les descriptions
                     $index = 0;
                     $tarifs->rewind_posts();
                     while ($tarifs->have_posts()) : $tarifs->the_post();
-                        echo '<span data-slide-status="' . $index . '">' . get_the_excerpt() . '</span>';
+                        echo '<span data-slide-status="' . $index . '">' . get_the_category() . '</span>';
                         $index++;
                     endwhile;
                 endif;
