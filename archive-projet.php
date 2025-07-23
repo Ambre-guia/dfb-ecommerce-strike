@@ -1,58 +1,26 @@
 <?php
-
-/**
- * The template for displaying project archives
- */
-
 get_header();
 ?>
 
-<main id="primary-content" class="site-main">
-
-    <?php if (have_posts()) : ?>
-        <div class="projets-grid">
-            <?php
-            while (have_posts()) :
-                the_post();
-            ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class('projet-item'); ?>>
-                    <div class="projet-thumbnail">
-                        <?php if (has_post_thumbnail()) : ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_post_thumbnail('large'); ?>
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                    <div class="projet-content">
-                        <h2 class="projet-title">
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </h2>
-                        <div class="projet-categories">
-                            <?php
-                            $categories = get_the_terms(get_the_ID(), 'categorie-projet');
-                            if ($categories && !is_wp_error($categories)) :
-                                foreach ($categories as $category) :
-                                    echo '<span class="projet-category">' . esc_html($category->name) . '</span>';
-                                endforeach;
-                            endif;
-                            ?>
-                        </div>
-                        <div class="projet-excerpt">
-                            <?php the_excerpt(); ?>
-                        </div>
-                        <a href="<?php the_permalink(); ?>" class="read-more">Voir le projet</a>
-                    </div>
-                </article>
-            <?php endwhile; ?>
+<main id="primary-content" class="site-main archive-main">
+    <div class="archive-container">
+        <div class="archive-list">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <a href="<?php the_permalink(); ?>" class="archive-item-link">
+                        <article id="post-<?php the_ID(); ?>" <?php post_class('archive-item'); ?>>
+                            <span class="item-number">0<?php echo $wp_query->current_post + 1; ?></span>
+                            <h2 class="item-title"><?php the_title(); ?></h2>
+                        </article>
+                    </a>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <p class="no-results">Aucun projet trouvé.</p>
+            <?php endif; ?>
         </div>
-
-        <?php the_posts_navigation(); ?>
-
-    <?php else : ?>
-        <p class="error-if">Aucun projet trouvé.</p>
-    <?php endif; ?>
     </div>
 </main>
 
 <?php
 get_footer();
+?>
