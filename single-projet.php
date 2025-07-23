@@ -1,9 +1,46 @@
 <?php
-
 /**
  * The template for displaying single projects
  */
 
 get_header();
-the_content();
+?>
+
+<main id="primary-content" class="site-main">
+    <article id="post-<?php the_ID(); ?>" <?php post_class('projet-single'); ?>>
+        <div class="hero-header">
+            <div class="container">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+                <?php
+                $categories = get_the_terms(get_the_ID(), 'categorie-projet');
+                if ($categories && !is_wp_error($categories)) : ?>
+                    <div class="projet-categories">
+                        <?php foreach ($categories as $category) : ?>
+                            <span class="projet-category"><?php echo esc_html($category->name); ?></span>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="featured-image-container">
+                <div class="container">
+                    <div class="featured-image">
+                        <?php the_post_thumbnail('full'); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <div class="container">
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
+        </div>
+    </article>
+</main>
+
+<?php
 get_footer();
+?>

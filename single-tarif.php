@@ -24,6 +24,16 @@ get_header();
             </div>
         </div>
 
+        <?php if (has_post_thumbnail()) : ?>
+            <div class="featured-image-container">
+                <div class="container">
+                    <div class="featured-image">
+                        <?php the_post_thumbnail('full'); ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+
         <div class="container">
             <div class="entry-content">
                 <?php the_content(); ?>
@@ -34,3 +44,4 @@ get_header();
 
 <?php
 get_footer();
+?>
