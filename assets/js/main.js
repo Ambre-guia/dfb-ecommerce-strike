@@ -419,3 +419,79 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 =======
 >>>>>>> parent of 9acda4f (feat(archive): add kinetic cursor and image hover effects)
+
+// Kinetic cursor and image effects for archive pages
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.archive-main')) {
+        initArchiveEffects();
+    }
+});
+
+function initArchiveEffects() {
+    // Create kinetic cursor
+    const cursor = document.createElement('div');
+    cursor.classList.add('kinetic-cursor');
+    document.body.appendChild(cursor);
+
+    // Mouse movement tracking
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor animation
+    function animateCursor() {
+        const speed = 0.15;
+        cursorX += (mouseX - cursorX) * speed;
+        cursorY += (mouseY - cursorY) * speed;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Archive item interactions
+    const archiveItems = document.querySelectorAll('.archive-item-link');
+    
+    archiveItems.forEach((item, index) => {
+        const thumbnail = item.querySelector('.item-thumbnail');
+        
+        item.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+            
+            // Add kinetic movement to thumbnail
+            if (thumbnail) {
+                thumbnail.style.transform = `translateY(-50%) scale(1) rotate(${Math.random() * 4 - 2}deg)`;
+            }
+        });
+
+        item.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+            
+            if (thumbnail) {
+                thumbnail.style.transform = 'translateY(-50%) scale(0.8) rotate(-5deg)';
+            }
+        });
+
+        // Dynamic thumbnail positioning based on mouse
+        item.addEventListener('mousemove', (e) => {
+            if (thumbnail) {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const moveX = (x / rect.width - 0.5) * 20;
+                const moveY = (y / rect.height - 0.5) * 10;
+                
+                thumbnail.style.transform = `translateY(-50%) scale(1) rotate(${moveX * 0.1}deg) translateX(${moveX}px) translateY(${moveY}px)`;
+            }
+        });
+    });
+}
