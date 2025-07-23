@@ -316,77 +316,103 @@ function initSlider() {
 }
 
 // Kinetic cursor and image effects for archive pages
+// Archive Filters Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.archive-main')) {
-        initArchiveEffects();
+    if (document.querySelector('.archive-filters')) {
+        initArchiveFilters();
     }
 });
 
-function initArchiveEffects() {
-    // Create kinetic cursor
-    const cursor = document.createElement('div');
-    cursor.classList.add('kinetic-cursor');
-    document.body.appendChild(cursor);
-
-    // Mouse movement tracking
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-
-    // Smooth cursor animation
-    function animateCursor() {
-        const speed = 0.15;
-        cursorX += (mouseX - cursorX) * speed;
-        cursorY += (mouseY - cursorY) * speed;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Archive item interactions
+function initArchiveFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const archiveList = document.getElementById('archive-list');
     const archiveItems = document.querySelectorAll('.archive-item-link');
-    
-    archiveItems.forEach((item, index) => {
-        const thumbnail = item.querySelector('.item-thumbnail');
-        
-        item.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-            
-            // Add kinetic movement to thumbnail
-            if (thumbnail) {
-                thumbnail.style.transform = `translateY(-50%) scale(1) rotate(${Math.random() * 4 - 2}deg)`;
-            }
-        });
 
-        item.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const filter = this.getAttribute('data-filter');
             
-            if (thumbnail) {
-                thumbnail.style.transform = 'translateY(-50%) scale(0.8) rotate(-5deg)';
-            }
-        });
-
-        // Dynamic thumbnail positioning based on mouse
-        item.addEventListener('mousemove', (e) => {
-            if (thumbnail) {
-                const rect = item.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const moveX = (x / rect.width - 0.5) * 20;
-                const moveY = (y / rect.height - 0.5) * 10;
-                
-                thumbnail.style.transform = `translateY(-50%) scale(1) rotate(${moveX * 0.1}deg) translateX(${moveX}px) translateY(${moveY}px)`;
-            }
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Add loading state
+            archiveList.classList.add('loading');
+            
+            // Filter items with animation
+            setTimeout(() => {
+                filterItems(filter, archiveItems);
+                archiveList.classList.remove('loading');
+                updateItemNumbers();
+            }, 300);
         });
     });
 }
+
+function filterItems(filter, items) {
+    items.forEach((item, index) => {
+        item.classList.add('filtering');
+        
+        setTimeout(() => {
+            if (filter === 'all') {
+                item.classList.remove('hidden');
+            } else {
+                if (item.classList.contains('category-' + filter)) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            }
+            
+            setTimeout(() => {
+                item.classList.remove('filtering');
+            }, 100);
+        }, index * 50);
+    });
+}
+
+function updateItemNumbers() {
+    const visibleItems = document.querySelectorAll('.archive-item-link:not(.hidden)');
+    
+    visibleItems.forEach((item, index) => {
+        const numberElement = item.querySelector('.item-number');
+        if (numberElement) {
+            numberElement.textContent = '0' + (index + 1);
+        }
+    });
+}
+
+// Enhanced kinetic effects for filtered items
+function enhanceKineticEffects() {
+    const archiveItems = document.querySelectorAll('.archive-item-link');
+    
+    archiveItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', function() {
+            // Add staggered animation to other items
+            archiveItems.forEach((otherItem, otherIndex) => {
+                if (otherItem !== item && !otherItem.classList.contains('hidden')) {
+                    const distance = Math.abs(index - otherIndex);
+                    const delay = distance * 50;
+                    
+                    setTimeout(() => {
+                        otherItem.style.transform = `translateX(${distance * 2}px)`;
+                    }, delay);
+                }
+            });
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            // Reset all items
+            archiveItems.forEach(otherItem => {
+                otherItem.style.transform = '';
+            });
+        });
+    });
+}
+
+// Initialize enhanced effects after DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.archive-main')) {
+        setTimeout(enhanceKineticEffects, 500);
+    }
+});
