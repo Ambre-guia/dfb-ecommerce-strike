@@ -11,6 +11,11 @@ get_header();
                         <article id="post-<?php the_ID(); ?>" <?php post_class('archive-item'); ?>>
                             <span class="item-number">0<?php echo $wp_query->current_post + 1; ?></span>
                             <h2 class="item-title"><?php the_title(); ?></h2>
+                            <?php if (has_post_thumbnail()) : ?>
+                                <div class="item-thumbnail">
+                                    <?php the_post_thumbnail('large'); ?>
+                                </div>
+                            <?php endif; ?>
                         </article>
                     </a>
                 <?php endwhile; ?>
