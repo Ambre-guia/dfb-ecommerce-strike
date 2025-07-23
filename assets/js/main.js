@@ -314,6 +314,7 @@ function initSlider() {
     });
   });
 }
+<<<<<<< HEAD
 
 // Kinetic cursor and image effects for archive pages
 // Archive Filters Functionality
@@ -416,3 +417,5 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(enhanceKineticEffects, 500);
     }
 });
+=======
+>>>>>>> parent of 9acda4f (feat(archive): add kinetic cursor and image hover effects)
