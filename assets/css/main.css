@@ -804,3 +804,69 @@ option {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+/* Archive Pages Styling */
+.archive-main {
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.archive-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 5%;
+}
+
+.archive-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.archive-item-link {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+    margin: 1.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.archive-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+}
+
+.item-number {
+    font-size: 1em;
+    color: #888888;
+    margin-right: 2rem;
+}
+
+.item-title {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 0;
+    color: #cccccc;
+    transition: all 0.3s ease;
+}
+
+.archive-item-link:hover .item-title {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.archive-item-link:first-child .item-title {
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.no-results {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 3rem 0;
+}
