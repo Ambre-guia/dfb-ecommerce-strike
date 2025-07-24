@@ -798,6 +798,31 @@ option {
   opacity: 0.5;
   pointer-events: none;
 }
+
+/* First item special styling */
+.archive-item-link:first-child .item-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .item-thumbnail {
+    width: 280px;
+    height: 200px;
+    right: 5%;
+  }
+
+  .item-title {
+    font-size: 2em;
+  }
+}
+
+.no-results {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 3rem 0;
+}
 /* Tarifs Grid */
 .tarifs-grid {
   display: grid;
