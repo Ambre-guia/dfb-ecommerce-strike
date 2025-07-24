@@ -270,6 +270,12 @@ function initSlider() {
                 },
               }
             );
+
+            // Update link visibility
+            document.querySelectorAll('[data-slide-link]').forEach(link => {
+              link.style.display = 'none';
+            });
+            document.querySelector(`[data-slide-link="${slideId}"]`).style.display = 'block';
           }
         });
       });
@@ -293,30 +299,30 @@ function initSlider() {
     document.body.classList.remove("loading");
 
     const el = document.getElementById("slider");
-    const imgs = Array.from(el.querySelectorAll("img"));
+    if (el) {
+      const imgs = Array.from(el.querySelectorAll("img"));
 
-    // Initialiser les textes au chargement
-    const slideTitleEl = document.getElementById("slide-title");
-    const slideStatusEl = document.getElementById("slide-status");
-    const initialTitle = document.querySelector(
-      '[data-slide-title="0"]'
-    ).innerHTML;
-    const initialStatus = document.querySelector(
-      '[data-slide-status="0"]'
-    ).innerHTML;
+      if (imgs.length > 0) {
+        // Initialiser les textes au chargement
+        const slideTitleEl = document.getElementById("slide-title");
+        const slideStatusEl = document.getElementById("slide-status");
+        const initialTitleEl = document.querySelector('[data-slide-title="0"]');
+        const initialStatusEl = document.querySelector('[data-slide-status="0"]');
 
-    slideTitleEl.innerHTML = initialTitle;
-    slideStatusEl.innerHTML = initialStatus;
+        if (initialTitleEl && initialStatusEl && slideTitleEl && slideStatusEl) {
+          slideTitleEl.innerHTML = initialTitleEl.innerHTML;
+          slideStatusEl.innerHTML = initialStatusEl.innerHTML;
+        }
 
-    new displacementSlider({
-      parent: el,
-      images: imgs,
-    });
+        new displacementSlider({
+          parent: el,
+          images: imgs,
+        });
+      }
+    }
   });
 }
-<<<<<<< HEAD
 
-// Kinetic cursor and image effects for archive pages
 // Archive Filters Functionality
 document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.archive-filters')) {
@@ -338,12 +344,16 @@ function initArchiveFilters() {
             this.classList.add('active');
             
             // Add loading state
-            archiveList.classList.add('loading');
+            if (archiveList) {
+                archiveList.classList.add('loading');
+            }
             
             // Filter items with animation
             setTimeout(() => {
                 filterItems(filter, archiveItems);
-                archiveList.classList.remove('loading');
+                if (archiveList) {
+                    archiveList.classList.remove('loading');
+                }
                 updateItemNumbers();
             }, 300);
         });
@@ -382,43 +392,6 @@ function updateItemNumbers() {
         }
     });
 }
-
-// Enhanced kinetic effects for filtered items
-function enhanceKineticEffects() {
-    const archiveItems = document.querySelectorAll('.archive-item-link');
-    
-    archiveItems.forEach((item, index) => {
-        item.addEventListener('mouseenter', function() {
-            // Add staggered animation to other items
-            archiveItems.forEach((otherItem, otherIndex) => {
-                if (otherItem !== item && !otherItem.classList.contains('hidden')) {
-                    const distance = Math.abs(index - otherIndex);
-                    const delay = distance * 50;
-                    
-                    setTimeout(() => {
-                        otherItem.style.transform = `translateX(${distance * 2}px)`;
-                    }, delay);
-                }
-            });
-        });
-        
-        item.addEventListener('mouseleave', function() {
-            // Reset all items
-            archiveItems.forEach(otherItem => {
-                otherItem.style.transform = '';
-            });
-        });
-    });
-}
-
-// Initialize enhanced effects after DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('.archive-main')) {
-        setTimeout(enhanceKineticEffects, 500);
-    }
-});
-=======
->>>>>>> parent of 9acda4f (feat(archive): add kinetic cursor and image hover effects)
 
 // Kinetic cursor and image effects for archive pages
 document.addEventListener('DOMContentLoaded', function() {
